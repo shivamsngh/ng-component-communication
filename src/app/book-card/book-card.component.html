@@ -1,0 +1,23 @@
+<div class="by-output">
+    <div class="card">
+        <div class="card-header">By Output</div>
+        <div class="card-body">
+            <label for="card-text">Enter Text</label>
+            <input type="text" name="card-text" [value]="outputCard.name" (input)="outputCard.name = $event.target.value">
+            <button type="submit" (click)="sendDataByOutputProperty(outputCard)">Send</button>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+</div>
+
+<div class="by-service">
+    <div class="card">
+        <div class="card-header">By Service</div>
+        <div class="card-body">
+            <label for="card-text">Enter Text</label>
+            <input type="text" name="card-text" [value]="card.name" (input)="card.name = $event.target.value">
+            <button type="submit" (click)="sendDataByService(card)">Send</button>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+</div>

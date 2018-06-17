@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Books } from '../models/book';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Independent Angular Component Interation';
+  books: Books[] = [];
+
+  onEvent(card: Books) {
+    console.log(card);
+    this.books.push({ name: card.name });
+  }
 }
+
+
