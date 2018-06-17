@@ -16,27 +16,18 @@ export class BookCardComponent implements OnInit {
 
   private outputCard: Books = { name: '' };
   private serviceCard: Books = { name: '' };
-  private card: Books = { name: '' };
+
   constructor(private dataService: DataCommunicationService) {
-    this.dataService.sendBookData(this.serviceCard);
   }
 
   ngOnInit() {
   }
 
   sendDataByOutputProperty(card: Books) {
-    // return card;
     this.cardEvent.emit(card);
   }
 
-  sendDataByService(card: Books) {
-    this.serviceCard.name = card.name;
+  sendDataByService(card?: Books) {
     this.dataService.sendBookData(this.serviceCard);
-    console.log('card value', this.serviceCard);
   }
-
-  //   sendDataIndependetly() {
-  // this.events.
-  //   }
-
 }
